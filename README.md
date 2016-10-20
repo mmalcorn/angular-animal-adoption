@@ -1,6 +1,6 @@
 My Natural Remedies
 Create a listing app for natural remedies.
-* I want to display each natural remedy with its name, category, price, and ailment(s) it treats.
+* I want to display each natural remedy with its name, source, price, and ailment(s) it treats.
 * I would like to be able to display only the remedies that treat a particular ailment.
 * I would also like to display only the remedies of a particular category (i.e. oil)
 * I would like my users to be able to sort them by price (maybe)
