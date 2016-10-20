@@ -24,7 +24,7 @@ import { NaturalRemedy } from './remedy.model';
       <div class="form-group">
         <label>Ailment(s):</label>
         <input class="form-control" [(ngModel)]="childSelectedRemedy.ailment">
-        <button class="btn btn-success" (click)="finishedEditing()">Done</button>
+        <button class="btn btn-success" (click)="doneClicked()">Done</button>
       </div>
     </div>
   `
@@ -32,4 +32,8 @@ import { NaturalRemedy } from './remedy.model';
 
 export class EditRemedyComponent {
   @Input() childSelectedRemedy: NaturalRemedy;
+  @Output() doneClickedSender = new EventEmitter();
+  doneClicked() {
+    this.doneClickedSender.emit();
+  }
 }

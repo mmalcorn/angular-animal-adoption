@@ -7,11 +7,12 @@ import { NaturalRemedy } from './remedy.model';
   <div class="container">
     <h1>Natural Remedies</h1>
     <remedy-list
-      [childRemedyList]="masterRemedyList"
-      (clickSender)="showDetails($event)"
+      [childNaturalRemedyList]="masterRemedyList"
+      (clickSender)="displayDetails($event)"
     ></remedy-list>
     <edit-remedy
       [childSelectedRemedy]="selectedRemedy"
+      (doneClickedSender)="finishedEditing()"
     ></edit-remedy>
   </div>
   `
