@@ -14,6 +14,7 @@ import { NaturalRemedy } from './remedy.model';
       [childSelectedRemedy]="selectedRemedy"
       (doneClickedSender)="finishedEditing()"
     ></edit-remedy>
+    <new-remedy></new-remedy>
   </div>
   `
 })
