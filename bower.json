@@ -1,0 +1,14 @@
+{
+  "name": "angular2-skeleton",
+  "description": "",
+  "main": "",
+  "license": "ISC",
+  "homepage": "https://github.com/mmalcorn/angular-natural-remedies",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

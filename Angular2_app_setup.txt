@@ -1,0 +1,85 @@
+https://www.learnhowtoprogram.com/javascript/angular-js/creating-an-angular2-development-environment
+
+Angular Setup Checklist:
+
+1. Create the project directory
+
+2. Create index.html in the top level of the project directory. Add skeleton project structure.
+
+3. Create package.json file for npm dependencies. Copy and paste npm dependencies.
+
+4. Run bower init to create the bower manifest file, keeping all the defaults.
+    $ npm install bower -g (if it has not yet been don
+    $ bower init
+
+5. Create .gitignore file. Include:
+
+    node_modules/
+    npm-debug.log
+    bower_components/
+    app/*.js
+    app/*.js.map
+    .DS_Store
+    build/
+    typings/
+
+6. Add resources folder, including subfolders for images, styles and js. Then add styles.css to the styles folder with a single obvious style rule to make sure the files are connected up correctly - for example, turn all the <h1> tags blue.
+
+7. Create the app folder, and inside of it, add the root component: app.component.ts.
+----
+    import { Component } from '@angular/core';
+
+    @Component({
+    selector: 'my-app',
+    template: `
+    <h1>My First Angular 2 App</h1>
+    `
+    })
+
+    export class AppComponent {
+
+    }
+----
+8. Also in the app folder, add the entry point files: app.module.ts and main.ts.
+
+  app/app.module.ts:
+----
+    import { NgModule }      from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { AppComponent }   from './app.component';
+
+    @NgModule({
+      imports: [BrowserModule],
+      declarations: [ AppComponent ],
+      bootstrap:    [ AppComponent ]
+    })
+
+    export class AppModule { }
+----
+  app/main.ts
+----
+  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+  import { AppModule } from './app.module';
+
+  const platform = platformBrowserDynamic();
+
+  platform.bootstrapModule(AppModule);
+----
+9. Create the Angular configuration files in the top level of your project directory: tsconfig.json, typings.json, and systemjs.config.js.
+
+    Refer to website for specific content.
+
+10. Add gulpfile.js to the top level of your project directory.
+
+11. Install any bower dependencies, such as Bootstrap.
+
+12. Run the 4 development commands.
+    Development Commands:
+      npm install
+      bower install
+      gulp build
+      gulp serve
+
+**Troubleshooting**
+
+If the above steps have been completed and there are still errors relating to dependencies, try deleting the node_modules and bower_components folders and then rerunning the npm and bower install commands.
